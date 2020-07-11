@@ -3,9 +3,10 @@
  */
 
 using Microsoft.VisualStudio.Services.OAuth;
-using Newtonsoft.Json;
-using RestSharp;
 using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace GarrettBot.BlizzardAPI
 {
@@ -18,26 +19,36 @@ namespace GarrettBot.BlizzardAPI
         /// This method will get the BlizzardAccess token using my credentials.
         /// </summary>
         /// <returns></returns>
-        public static void GetBlizzardAccessToken()
+        public static async Task GetBlizzardAccessToken()
         {
             // Get my blizzard token from environmentvariable
             string clientSecret = Environment.GetEnvironmentVariable("BLIZZARDTOKEN");
 
-            // Get the Token
-            var client = new RestClient("https://eu.battle.net/oauth/token");
-            var request = new RestRequest(Method.POST);
-            request.AddHeader("cache-control", "no-cache");
-            request.AddHeader("content-type", "application/x-www-form-urlencoded");
-            request.AddParameter("application/x-www-form-urlencoded",
-                                $"grant_type=client_credentials&client_id=4329a43854634303a426830ceabb767d&client_secret={clientSecret}",
-                                ParameterType.RequestBody);
-            IRestResponse response = client.Execute(request);
+            // Create our client
+            using (HttpClient client = new HttpClient())
+            {
+                // Authorization
+                string auth = Convert.ToBase64String(Encoding.ASCII.GetBytes($"4329a43854634303a426830ceabb767d:{clientSecret}"));
 
-            // Deserialize the token
-            var tokenResponse = JsonConvert.DeserializeObject<AccessTokenResponse>(response.Content);
+                // Headers
+                client.DefaultRequestHeaders.Add("cache-control", "no-cache");
+                client.DefaultRequestHeaders.Add("Authorization", $"Basic {auth}");
 
-            // Store Token
-            BlizzAccessToken = tokenResponse.AccessToken;
+                // Content
+                HttpContent hc = new StringContent("grant_type=client_credentials", Encoding.UTF8, "application/x-www-form-urlencoded");
+
+                // Request our data and record response
+                HttpResponseMessage response = await client.PostAsync("https://eu.battle.net/oauth/token", hc);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // Deserialize the token
+                    AccessTokenResponse tokenResponse = await response.Content.ReadAsAsync<AccessTokenResponse>();
+
+                    // Store Token
+                    BlizzAccessToken = tokenResponse.AccessToken;
+                }
+            }
         }
     }
 }

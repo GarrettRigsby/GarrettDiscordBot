@@ -291,15 +291,6 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
-      "RestSharp/106.11.4": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/RestSharp.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/RestSharp.dll": {}
-        }
-      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -2065,22 +2056,6 @@
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
-      ]
-    },
-    "RestSharp/106.11.4": {
-      "sha512": "vx35q52cM3UQNOiN3UqSQ9U7I5UeoyzVmjsWKQxOxn6FVu+n01+SNwhxc/jvf92WPBmmwzTV4VYTeTg4KviJdA==",
-      "type": "package",
-      "path": "restsharp/106.11.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net452/RestSharp.dll",
-        "lib/net452/RestSharp.xml",
-        "lib/netstandard2.0/RestSharp.dll",
-        "lib/netstandard2.0/RestSharp.xml",
-        "restsharp.106.11.4.nupkg.sha512",
-        "restsharp.nuspec",
-        "restsharp.png"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -5801,8 +5776,7 @@
       "Discord.Net >= 2.2.0",
       "Microsoft.Extensions.Configuration >= 3.1.5",
       "Microsoft.Extensions.DependencyInjection >= 3.1.5",
-      "Microsoft.VisualStudio.Services.Client >= 16.153.0",
-      "RestSharp >= 106.11.4"
+      "Microsoft.VisualStudio.Services.Client >= 16.153.0"
     ]
   },
   "packageFolders": {
@@ -5861,10 +5835,6 @@
           "Microsoft.VisualStudio.Services.Client": {
             "target": "Package",
             "version": "[16.153.0, )"
-          },
-          "RestSharp": {
-            "target": "Package",
-            "version": "[106.11.4, )"
           }
         },
         "imports": [

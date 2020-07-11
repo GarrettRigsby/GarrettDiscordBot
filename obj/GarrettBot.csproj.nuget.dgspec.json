@@ -56,10 +56,6 @@
             "Microsoft.VisualStudio.Services.Client": {
               "target": "Package",
               "version": "[16.153.0, )"
-            },
-            "RestSharp": {
-              "target": "Package",
-              "version": "[106.11.4, )"
             }
           },
           "imports": [

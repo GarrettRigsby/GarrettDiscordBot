@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "q4YqxLghfteuvqvyn3Q7CFlUAuvFRS5uGNUrbDFyMSj7FOIPZx8i6OXgzkrLat8TsLHepHSOSi3ITUaEoU6Irw==",
+  "dgSpecHash": "7uI4dlxW6kozfX1Be9Z8673p8Qm9SPL7+95acrtplaQ4BpcJwLK9ssGRgV6jj+fkhV7sjKkhFeezMvVd8mepfg==",
   "success": true,
   "projectFilePath": "C:\\Users\\garre\\source\\repos\\GarrettBot\\GarrettBot.csproj",
   "expectedPackageFiles": [
@@ -24,7 +24,6 @@
     "C:\\Users\\garre\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\garre\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\garre\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
-    "C:\\Users\\garre\\.nuget\\packages\\restsharp\\106.11.4\\restsharp.106.11.4.nupkg.sha512",
     "C:\\Users\\garre\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\garre\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\garre\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
